@@ -38,6 +38,14 @@ jobs:
           cat status.json
 
       - name: Commit status.json
+        env:
+          # Personal access token (fine-grained, contents:write) that bypasses
+          # the branch protection on this repo. GITHUB_TOKEN can't bypass it
+          # (this repo is a fork and tokens there are read-only by default).
+          # Create the token at https://github.com/settings/tokens?type=beta
+          # with "Contents: Read and write" scoped to this repo, then add it
+          # as the `STATUS_PUSH_TOKEN` secret in repo Settings → Secrets.
+          STATUS_PUSH_TOKEN: ${{ secrets.STATUS_PUSH_TOKEN }}
         run: |
           git config user.name "alfred-bot"
           git config user.email "alfred-bot@users.noreply.github.com"
@@ -47,4 +55,11 @@ jobs:
             exit 0
           fi
           git commit -m "ci(status): refresh status.json from cron"
+          if [ -n "${STATUS_PUSH_TOKEN}" ]; then
+            REPO="${GITHUB_REPOSITORY}"
+            git remote set-url origin "https://x-access-token:${STATUS_PUSH_TOKEN}@github.com/${REPO}.git"
+            echo "Pushing with STATUS_PUSH_TOKEN (bypasses branch protection)."
+          else
+            echo "::warning::STATUS_PUSH_TOKEN secret not set. The push will likely fail on protected branches. Set a fine-grained PAT as repo secret STATUS_PUSH_TOKEN to fix this."
+          fi
           git push
