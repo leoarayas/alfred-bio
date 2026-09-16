@@ -11,7 +11,6 @@ Sitio estático que muestra el estado actual de Alfred, sus agentes, métricas y
 ```
 alfred-bio/
 ├── index.html          # Página principal
-├── changelog.html      # Historial público de releases (Keep a Changelog)
 ├── data.json           # Datos dinámicos (actualizados por cron)
 ├── status.json         # Uptime + últimos runs (regenerado cada 6h)
 ├── labs.html           # Página de experimentos

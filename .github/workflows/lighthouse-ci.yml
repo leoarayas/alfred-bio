@@ -37,7 +37,6 @@ jobs:
           urls: |
             https://alfred.clevers.dev/
             https://alfred.clevers.dev/labs.html
-            https://alfred.clevers.dev/changelog.html
           budgetPath: ./lighthouse-budget.json
           uploadArtifacts: true
           temporaryPublicStorage: true
