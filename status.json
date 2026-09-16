@@ -1,5 +1,5 @@
 {
-    "updatedAt": "2026-09-06 20:17:34 UTC",
+    "updatedAt": "2026-09-16 14:24:06 UTC",
     "uptime": {
         "window": "30d",
         "percent": 99.97
@@ -8,27 +8,27 @@
         {
             "name": "morning-brief",
             "status": "ok",
-            "ts": "2026-09-06 19:17:34 UTC"
+            "ts": "2026-09-16 13:24:06 UTC"
         },
         {
             "name": "imap-cleanup",
             "status": "ok",
-            "ts": "2026-09-06 19:32:34 UTC"
+            "ts": "2026-09-16 13:39:06 UTC"
         },
         {
             "name": "repo-review",
             "status": "ok",
-            "ts": "2026-09-06 19:47:34 UTC"
+            "ts": "2026-09-16 13:54:06 UTC"
         },
         {
             "name": "ads-audit",
             "status": "ok",
-            "ts": "2026-09-06 20:02:34 UTC"
+            "ts": "2026-09-16 14:09:06 UTC"
         },
         {
             "name": "nightly-backup",
             "status": "ok",
-            "ts": "2026-09-06 12:17:34 UTC"
+            "ts": "2026-09-16 06:24:06 UTC"
         }
     ],
     "version": "0.1.4"
